@@ -29,22 +29,19 @@ vector<char> LetrasUnicas (string cadena){
     return letraUnica;
 }//fin del ejercio 1
 
-vector <int> * contLetra (string cadena, string caracter){
-	vector<int> contador;
-	int cont = 0;
-    
-    for(int i = 0;i<caracter.length();i++){
-    	char letra = caracter[i];
-    	
-    	for(int j = 0;j<cadena.length();j++){
-    		if (letra == j){
-    			cont++;
-			}//valida si la letra es lo mismo que la cadena
-    	}
-    	contador.push_back(cont);
-    }
-    return contador;
-	
+int * contLetra (string cadena, string caracteres){
+	int contador = 0;
+	vector <int> vector;
+	for (int i =0; i<caracteres.length();i++){
+		char letra = caracteres[i];
+		
+		for (int j =0; j<cadena.length(); j++){
+			if (j == letra){
+				contador++;
+			}
+			vector.push_back(contador);
+		}
+	}
 }
 
 string ordenarPalabra (string cadena){
@@ -101,7 +98,8 @@ int menu;
 				break;
 			case 2:
 				{
-					string cadena,caracteres;
+					string cadena;
+					string caracteres;
 					vector <char> letras;
 					cout << "Ingrese una cadena: ";
 					cin >> cadena;
@@ -115,11 +113,9 @@ int menu;
 						cout << letras[i] << " ";
 					}//mete las letras al vector
 					cout  << " ] = " ;
-
-
-					 for (char metodo :  * contLetra(cadena, caracteres)){
-						cout << metodo << " , " ;
-					}//imprime el metodo
+					
+					//contLetra
+					
 					cout << endl;
 					
 					
